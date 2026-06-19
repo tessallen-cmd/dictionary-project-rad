@@ -1,0 +1,7 @@
+
+
+
+.Dictionary input {
+  background-color: white !important;
+  color: #212529 !important; /* This ensures your typed text is dark grey/black on the white background */
+}
