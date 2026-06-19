@@ -6,7 +6,7 @@ import Dictionary from "./Dictionary.jsx";
 function App() {
   return (
     <div className="App">
-      <div classname="container">
+      <div className="container">
         <header className="App-header">
           <img src={logo} className="App-logo  " alt="logo" />
         </header>
