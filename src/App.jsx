@@ -19,7 +19,7 @@ function App() {
             coded by SheCodes
             <br />
             <a
-              href="https://github.com/tessallen-cmd/my-app-test"
+              href="https://github.com/tessallen-cmd/dictionary-project-rad"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted"
