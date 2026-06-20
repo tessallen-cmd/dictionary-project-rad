@@ -33,11 +33,22 @@ function handleKeywordChange(event){
 
 
     return (
-      <div className="Dictionary ps-3">
-        <form onSubmit={search}>
-          <input type="search" onChange={handleKeywordChange} />
+  <div className="Dictionary ps-3">
+    {/* Centering the form using Bootstrap utilities */}
+    <div className="row justify-content-center">
+      <div className="col-md-6 text-center">
+        <form onSubmit={search} className="d-flex justify-content-center">
+          <input 
+            type="search" 
+            onChange={handleKeywordChange} 
+            className="form-control text-center w-100" 
+            placeholder="Search for a word..."
+          />
         </form>
-        <Results results={results}/>
       </div>
-    );
+    </div>
+    
+    <Results results={results} />
+  </div>
+);
 }

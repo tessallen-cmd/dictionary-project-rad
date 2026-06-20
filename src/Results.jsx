@@ -9,7 +9,7 @@ export default function Results(props) {
 
   // 2. Otherwise, we HAVE data! Render everything safely down here:
   return (
-    <div className="Results">
+    <div className="Results text-center">
       <h2>{props.results.word}</h2>
 
       {props.results.meanings.map(function (meaning, index) {

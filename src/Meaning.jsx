@@ -4,7 +4,7 @@ export default function Meaning(props) {
   console.log(props.meaning); // Take a look at this flat structure in your console!
 
   return (
-    <div className="Meaning">
+    <div className="Meaning text-center my-3">
       {/* 1. Displays the part of speech (Noun, Verb, etc.) */}
       <h3>{props.meaning.partOfSpeech}</h3>
 

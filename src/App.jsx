@@ -14,10 +14,19 @@ function App() {
           <Dictionary />
         </main>
 
-        <footer className= "App-footer ">
-          {" "}
-          
-          <small>coded by SheCodes </small>
+        <footer className="App-footer text-center">
+          <small>
+            coded by SheCodes
+            <br />
+            <a
+              href="https://github.com/tessallen-cmd/my-app-test"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted"
+            >
+              open-sourced on GitHub
+            </a>
+          </small>
         </footer>
       </div>
     </div>
