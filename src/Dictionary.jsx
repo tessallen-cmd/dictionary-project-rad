@@ -79,8 +79,9 @@ export default function Dictionary(props) {
           </div>
         </div>
         {/* Changed tag to <Photos /> to perfectly match your import at the top */}
-        <Photos photos={photos} />
+        
         <Results results={results} />
+        <Photos photos={photos} />
       </div>
     );
   } else {
