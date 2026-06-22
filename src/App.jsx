@@ -16,7 +16,7 @@ function App() {
 
         <footer className="App-footer text-center">
           <small>
-            coded by SheCodes
+            coded by Tess Allen & SheCodes
             <br />
             <a
               href="https://github.com/tessallen-cmd/dictionary-project-rad"
