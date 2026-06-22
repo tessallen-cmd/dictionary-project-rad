@@ -1,54 +1,75 @@
-import  React, {useState} from "react";
-import axios from"axios";
+import React, { useState } from "react";
+import axios from "axios";
 import Results from "./Results";
 import "./Dictionary.css";
+import "./Results.css";
+import "./Meaning.css";
 
+export default function Dictionary(props) {
+  let [keyword, setKeyword] = useState(props.defaultKeyword);
+  let [results, setResults] = useState(null);
+  let [loaded, setLoaded] = useState(false);
 
+  function handleResponse(response) {
+    console.log(response.data);
+    setResults(response.data);
+  }
 
-export default function Dictionary(){
-let[ keyword,setKeyword]=useState("");
-let[results, setResults] =useState(null);
+  function search() {
+    let apiKey = "9117d16f27ad34748062df20bto34069";
+    let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
 
-function handleResponse(response){
-   console.log(response.data);
-   setResults(response.data);
-}
-    function search(event) {
-      event.preventDefault();
-     
-      // 1. Create a clean variable for your API key
-      let apiKey = "9117d16f27ad34748062df20bto34069";
+    axios.get(apiUrl).then(handleResponse);
+  }
 
-      // 2. Change your URL to use BACKTICKS ( ` ) and the ${ } syntax
-      let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
 
-      axios.get(apiUrl).then(handleResponse);
-    }
-
-
-
-function handleKeywordChange(event){
+  function handleKeywordChange(event) {
     setKeyword(event.target.value);
-}
+  }
 
+  function load() {
+    setLoaded(true);
+    let apiKey = "9117d16f27ad34748062df20bto34069";
+    let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=sunset&key=${apiKey}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
 
+  // 1. The "IF" switch sits inside the function now
+  if (loaded) {
     return (
-  <div className="Dictionary ps-3">
-    {/* Centering the form using Bootstrap utilities */}
-    <div className="row justify-content-center">
-      <div className="col-md-6 text-center">
-        <form onSubmit={search} className="d-flex justify-content-center">
-          <input 
-            type="search" 
-            onChange={handleKeywordChange} 
-            className="form-control text-center w-100" 
-            placeholder="Search for a word..."
-          />
-        </form>
+      <div className="Dictionary ps-3">
+        <div className="row justify-content-center">
+          <div className="col-md-6 ">
+            <section>
+                <h1> What word do you want to look up?</h1>
+              <form
+                onSubmit={handleSubmit}
+                className="d-flex justify-content-center"
+              >
+                <input
+                  type="search"
+                  onChange={handleKeywordChange}
+                  className="form-control text-center w-100"
+                  defaultValue={props.defaultKeyword}
+                />
+              </form>
+              <div className="hint">
+                suggested words: sunset, yoga, wine, forest..
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <Results results={results} />
       </div>
-    </div>
-    
-    <Results results={results} />
-  </div>
-);
-}
+    );
+    // 2. The "ELSE" block perfectly matches the "IF" above it
+  } else {
+    load();
+    return "Loading...";
+  }
+} // 3. This single brace safely closes the entire component

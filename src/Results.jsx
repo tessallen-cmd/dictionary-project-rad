@@ -1,24 +1,33 @@
 import React from "react";
 import Meaning from "./Meaning";
+import Phonetic from "./Phonetic";
 
 export default function Results(props) {
-  // 1. Guard Clause: If there is NO data yet, return null (render nothing)
   if (!props.results) {
     return null;
   }
 
-  // 2. Otherwise, we HAVE data! Render everything safely down here:
   return (
-    <div className="Results text-center">
+    <div className="Results">
+        <section>
       <h2>{props.results.word}</h2>
+
+      <div className="phonetic-container">
+        <Phonetic
+          word={props.results.word}
+          phoneticText={props.results.phonetic}
+        />
+      </div>
+      </section>
 
       {props.results.meanings.map(function (meaning, index) {
         return (
-          <div key={index}>
+          <section key={index}>
             <Meaning meaning={meaning} />
-          </div>
+          </section>
         );
       })}
+      
     </div>
   );
 }

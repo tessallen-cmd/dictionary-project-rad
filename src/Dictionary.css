@@ -1,7 +1,34 @@
+.Dictionary h1{
+    font-size: 18;
+    font-weight:bold ;
+    margin-bottom: 15;
+}    
+
+
+
+.Dictionary section{
+    background-color:white ;
+    padding: 30px;
+    border-radius:6px ;
+    box-shadow:0 10px 20px rgb(0 0 0 / 10%) ;
+    margin:20px ;
+}
+
+
 
 
 
 .Dictionary input {
   background-color: white !important;
-  color: #212529 !important; /* This ensures your typed text is dark grey/black on the white background */
+  color: #333 !important; /* This ensures your typed text is dark grey/black on the white background */
+  width:100% ;
+  padding: 6px 4px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+.Dictionary hint{
+
+
+    font-size:11px;
+    margin-top:5px ;
 }

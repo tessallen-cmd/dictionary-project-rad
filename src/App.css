@@ -1,3 +1,27 @@
+body{
+  background:#f9f8fe ;
+}
+a{
+  color:#9670f4 !important;
+}
+/* Styles our custom text-to-speech audio button if you are using it */
+.Phonetic button {
+  color: #9670f4 !important;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+
 .App-header{
 margin:30px 0;
 }
@@ -12,4 +36,9 @@ margin:30px 0;
 .App-footer{
   text-align:center;
   margin: 80px 0;
+
+
+
+
+
 }

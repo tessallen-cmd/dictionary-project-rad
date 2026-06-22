@@ -1,0 +1,27 @@
+.Phonetic {
+    margin: 20px 0;
+display: flex;         /* Activates Flexbox */
+  align-items: center;   /* Perfectly centers the button and text vertically */
+  gap: 15px;             /* Spits out a clean space between the button and text */
+}
+
+.Phonetic button {
+    border:1px solid #ddd;
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 13px;
+    margin-right: 10px;
+    font-weight:bold;
+    border-radius: 20px;
+    transition: all 150ms ease-in-out;
+    cursor:pointer;
+}
+.Phonetic button:hover{
+    background: #9670f4;
+    color: white !important;
+}
+.Phonetic .phonetic-text{
+opacity:0.5;
+font-weight: bold;
+display: inline-block;
+}
